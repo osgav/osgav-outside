@@ -11,6 +11,6 @@ share = false
 
 `https://outside.osgav.run` is my travel photo blog - a place where I collect photos from trips I've taken to make sharing them easy. And to have another website to play with.
 
-See also [$ whois osgav](https://osgav.run/post/whois-osgav)
+See also [$ whois osgav](https://osgav.run/post/whois-osgav.html)
 
 
