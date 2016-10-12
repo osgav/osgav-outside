@@ -1,7 +1,0 @@
-#!/bin/bash
-
-hugo server --theme=projecthub \
---port=1313 \
---bind=192.168.56.12 \
---baseURL="http://192.168.56.12:1313/"
-

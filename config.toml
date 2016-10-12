@@ -1,6 +1,6 @@
 baseurl = "https://outside.osgav.run/"
 languageCode = "en-us"
-title = "osgav: outside"
+title = "osgav outside: travelling, wandering & taking photos..."
 theme = "projecthub"
 paginate = 5
 uglyurls = true
