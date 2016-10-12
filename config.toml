@@ -1,4 +1,4 @@
-baseurl = "https://osgav.run/"
+baseurl = "https://outside.osgav.run/"
 languageCode = "en-us"
 title = "osgav: outside"
 theme = "projecthub"
