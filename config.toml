@@ -1,0 +1,35 @@
+baseurl = "https://osgav.run/"
+languageCode = "en-us"
+title = "osgav: outside"
+theme = "projecthub"
+paginate = 5
+uglyurls = true
+
+[params]
+	description = "travelling, wandering & taking photos..."
+	author = "osgav"
+	authorlocation = "the internet"
+	authorwebsite = "https://osgav.run/"
+	bio = "Global Availability & Performance Engineer"
+	logo = "images/tux.jpg"
+	githubName = "osgav"
+	twitterName = "ZER0D0TS"
+	hideHUGOSupport = false
+
+[[menu.main]]
+	name = "$ curl https://blog"
+	pre = "<h4>$ osgav</h4>"
+	weight = -100
+	identifier = "blog"
+	url = "/"
+
+[[menu.main]]
+	name = "github"
+	pre = "<h4>Find me again</h4>"
+	url = "https://github.com/osgav"
+	weight = 110
+
+[[menu.main]]
+	name = "twitter"
+	url = "https://twitter.com/ZER0D0TS"
+	weight = 110
