@@ -2,7 +2,7 @@
 author = "osgav"
 date = "2016-10-13T00:00:00Z"
 draft = false
-title = "osgav: outside"
+title = "What is osgav outside?"
 menu = "main"
 weight = "0"
 share = false
