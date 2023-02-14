@@ -7,15 +7,17 @@ orbs:
 workflows:
   build_and_deploy:
     jobs:
-      - hugo/build
+      - build
       - deploy
 
 jobs:
-  hugo/build:
-    version: "0.48"
-    html-proofer: false
-    post-steps:
-      - run: echo "end of hugo build job"
+  build:
+    steps:
+      - hugo/build:
+          version: "0.48"
+          html-proofer: false
+          post-steps:
+            - run: echo "end of hugo build job"
   deploy:
     docker:
       - image: cimg/aws:2023.01
@@ -37,5 +39,5 @@ jobs:
     #            to: s3://sample-app-vue
     #            arguments: --recursive
 
-# maybe this config is not invalid...
+# maybe *this* config is not invalid...
 
