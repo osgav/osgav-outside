@@ -11,16 +11,19 @@ workflows:
       - deploy
 
 jobs:
-  - hugo/build:
-      version: "0.48"
-      html-proofer: false
-      post-steps:
-        - run: echo "end of hugo build job"
-  - deploy:
-      aws-s3/copy:
-        from: public/
-        to: s3://sample-app-vue
-        arguments: --recursive
+  hugo/build:
+    version: "0.48"
+    html-proofer: false
+    post-steps:
+      - run: echo "end of hugo build job"
+  deploy:
+    docker:
+      - image: cimg/aws:2023.01
+    steps:
+      - aws-s3/copy:
+          from: public/
+          to: s3://sample-app-vue
+          arguments: --recursive
 
 
     #jobs:
@@ -34,5 +37,5 @@ jobs:
     #            to: s3://sample-app-vue
     #            arguments: --recursive
 
-# i bet this config is invalid
+# maybe this config is not invalid...
 
