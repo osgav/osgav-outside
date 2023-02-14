@@ -9,9 +9,11 @@ jobs:
     docker:
       - image: cimg/aws:2023.01
     steps:
+      - attach_workspace:
+          at: /tmp/workspace
       - run:
           name: check build output
-          command: ls ./public
+          command: ls /tmp/workspace
       - aws-s3/copy:
           from: public/
           to: s3://sample-app-vue
