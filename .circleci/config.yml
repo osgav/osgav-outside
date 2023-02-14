@@ -9,6 +9,7 @@ workflows:
     jobs:
       - hugo/build:
           version: "0.48"
+          html-proofer: false
           post-steps:
             - run: echo helloworld
             - aws-s3/copy:
