@@ -15,8 +15,9 @@ workflows:
           version: "0.48"
           html-proofer: false
           post-steps:
-            - run: echo helloworld
+            - run: echo "troubleshooting shuffle"
             - aws-cli/setup
+            - run: echo "AWS CLI installed?"
             - aws-s3/copy:
                 install-aws-cli: false
                 from: public/
