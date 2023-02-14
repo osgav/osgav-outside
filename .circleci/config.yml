@@ -10,10 +10,10 @@ jobs:
       - image: cimg/aws:2023.01
     steps:
       - attach_workspace:
-          at: /tmp/workspace
+          at: /root/project/public
       - run:
           name: check build output
-          command: ls /tmp/workspace
+          command: ls -a /root/project/public
       - aws-s3/copy:
           from: public/
           to: s3://sample-app-vue
