@@ -8,7 +8,7 @@ workflows:
   sample:
     jobs:
       - hugo/build:
-          version: "0.18"
+          version: "0.48"
           post-steps:
             - run: echo helloworld
             - aws-s3/copy:
