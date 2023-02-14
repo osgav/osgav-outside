@@ -4,11 +4,11 @@ orbs:
   hugo: circleci/hugo@1.3.0
   aws-s3: circleci/aws-s3@3.1.1
 
-workflows:
-  build_and_deploy:
-    jobs:
-      - build
-      - deploy
+#workflows:
+#  build_and_deploy:
+#    jobs:
+#      - build
+#      - deploy
 
 jobs:
   build:
@@ -39,5 +39,5 @@ jobs:
     #            to: s3://sample-app-vue
     #            arguments: --recursive
 
-# maybe *this* config is not invalid...
+# how about no 'workflows' bit for now...
 
