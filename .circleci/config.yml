@@ -2,11 +2,7 @@ version: 2.1
 
 orbs:
   hugo: circleci/hugo@1.3.0
-  aws-cli: circleci/aws-cli@3.1.4
-  aws-s3: circleci/aws-s3@3.1.1
-
-# installing aws-cli orb as per workaround described here:
-# https://github.com/CircleCI-Public/aws-s3-orb/issues/44#issuecomment-1429057191
+  aws-s3: circleci/aws-s3@3.1.0
 
 workflows:
   sample:
@@ -15,11 +11,8 @@ workflows:
           version: "0.48"
           html-proofer: false
           post-steps:
-            - run: echo "troubleshooting shuffle"
-            - aws-cli/setup
-            - run: echo "AWS CLI installed?"
+            - run: echo "downgraded aws-s3 orb is good?"
             - aws-s3/copy:
-                install-aws-cli: false
                 from: public/
                 to: s3://sample-app-vue
                 arguments: --recursive
