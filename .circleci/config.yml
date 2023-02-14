@@ -12,7 +12,8 @@ workflows:
           version: "0.48"
           html-proofer: false
           post-steps:
-            - run: echo "older aws-cli orb?"
+            - run: echo "try to actually setup the aws-cli orb..."
+            - aws-cli/setup
             - aws-s3/copy:
                 install-aws-cli: false
                 from: public/
