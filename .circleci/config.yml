@@ -10,10 +10,10 @@ jobs:
       - image: cimg/aws:2023.01
     steps:
       - attach_workspace:
-          at: /root/project/public
+          at: /tmp/workspace
       - run:
           name: check build output
-          command: ls -a /root/project/public
+          command: ls /tmp/workspace
       - aws-s3/copy:
           from: public/
           to: s3://sample-app-vue
@@ -26,5 +26,7 @@ workflows:
       - hugo/build:
           version: "0.48"
           html-proofer: false
-      - deploy
+      - deploy:
+          requires:
+            - hugo/build
 
