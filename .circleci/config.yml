@@ -13,10 +13,10 @@ jobs:
           at: /tmp/workspace
       - run:
           name: check build output
-          command: ls /tmp/workspace
+          command: ls /tmp/workspace/public
       - aws-s3/copy:
-          from: public/
-          to: s3://sample-app-vue
+          from: /tmp/workspace/public/
+          to: s3://outside.osgav.run/circleci-test01
           arguments: --recursive
 
 workflows:
