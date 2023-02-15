@@ -16,7 +16,7 @@ jobs:
           command: ls /tmp/workspace/public
       - aws-s3/copy:
           from: /tmp/workspace/public/
-          to: s3://outside.osgav.run/circleci-test01
+          to: s3://outside.osgav.run/circleci-test02
           arguments: --recursive
 
 workflows:
