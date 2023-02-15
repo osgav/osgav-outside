@@ -18,6 +18,7 @@ jobs:
           from: /tmp/workspace/public/
           to: s3://outside.osgav.run/circleci-test01
           arguments: --recursive
+          aws-region: eu-central-1
 
 workflows:
   version: 2
