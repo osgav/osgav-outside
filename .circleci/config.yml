@@ -15,7 +15,8 @@ jobs:
       - run:
           name: check build output
           command: ls /tmp/workspace/public
-      - aws-cli/setup
+      - aws-cli/setup:
+          role-arn: "arn:aws:iam::698362578618:role/oidc-circleci-osgav-outside"
       - aws-s3/copy:
           install-aws-cli: false
           from: /tmp/workspace/public/
@@ -32,4 +33,6 @@ workflows:
       - deploy:
           requires:
             - hugo/build
+          context:
+            - oidc
 
