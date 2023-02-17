@@ -14,13 +14,13 @@ jobs:
           at: /tmp/workspace
       - run:
           name: check build output
-          command: ls /tmp/workspace/public
+          command: ls -R /tmp/workspace/public
       - aws-cli/setup:
           role-arn: "arn:aws:iam::698362578618:role/oidc-circleci-osgav-outside"
       - aws-s3/copy:
           install-aws-cli: false
           from: /tmp/workspace/public/
-          to: s3://outside.osgav.run/circleci-test06
+          to: s3://outside.osgav.run/
           arguments: --recursive
 
 workflows:
