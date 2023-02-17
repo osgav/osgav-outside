@@ -20,7 +20,7 @@ jobs:
       - aws-s3/copy:
           install-aws-cli: false
           from: /tmp/workspace/public/
-          to: s3://outside.osgav.run/
+          to: s3://outside.osgav.run/circleci-test05
           arguments: --recursive
 
 workflows:
