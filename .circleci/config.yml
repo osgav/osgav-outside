@@ -35,4 +35,7 @@ workflows:
             - hugo/build
           context:
             - oidc
+          filters:
+            branches:
+              only: master
 
