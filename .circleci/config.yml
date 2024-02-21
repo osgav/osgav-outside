@@ -13,7 +13,14 @@ jobs:
       - attach_workspace:
           at: /tmp/workspace
       - run:
-          name: check build output
+          name: check build output 01
+          command: ls -R /tmp/workspace/public
+      - run:
+          name: run post-build-script.sh
+          command: ./build/post-build-script.sh
+          working_directory: /tmp/workspace
+      - run:
+          name: check build output 02
           command: ls -R /tmp/workspace/public
       - aws-cli/setup:
           role-arn: "arn:aws:iam::698362578618:role/oidc-circleci-osgav-outside"
@@ -30,6 +37,11 @@ workflows:
       - hugo/build:
           version: "0.48"
           html-proofer: false
+          post-steps:
+            - persist_to_workspace:
+                root: .
+                paths:
+                  - build/
       - deploy:
           requires:
             - hugo/build
