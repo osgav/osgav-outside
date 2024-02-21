@@ -1,0 +1,4 @@
+[submodule "static/subtest-abc"]
+	path = static/subtest-abc
+	url = https://github.com/osgav/subtest-abc
+	branch = main
